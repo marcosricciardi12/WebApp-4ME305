@@ -1,10 +1,13 @@
 body {
-    background-size:cover; 
-    background-position: center;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-  }
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjnIuOVfF16CHXhNHTUg3YXtBq3BXtigWPMg&usqp=CAU'); 
+  background-size:cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
   
   .bs-icon {
     --bs-icon-size: .75rem;
