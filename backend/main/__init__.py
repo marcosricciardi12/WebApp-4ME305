@@ -15,7 +15,6 @@ def create_app():
 	app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 	MYSQL_ROUTE = ('mysql+pymysql://' + str(os.getenv('DATABASE_USERNAME')) + ':' + str(os.getenv('DATABASE_PASSWORD')) + 
                                             '@' + str(os.getenv('DATABASE_ADDRESS')) + '/' + str(os.getenv('DATABASE_NAME')))
-	print(MYSQL_ROUTE)
 	app.config['SQLALCHEMY_DATABASE_URI'] = MYSQL_ROUTE
 	db.init_app(app)
 	import main.resources as resources
