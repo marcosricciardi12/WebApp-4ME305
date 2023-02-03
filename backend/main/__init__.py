@@ -20,6 +20,7 @@ def create_app():
 	import main.resources as resources
 	api.add_resource(resources.UsersResource, '/users')
 	api.add_resource(resources.UserResource, '/user/<id>')
+	api.add_resource(resources.UploadResource, '/upload')
 	api.init_app(app)
 	app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY')
 	app.config['JWT_ACCESS_TOKEN_EXPIRES'] = int(os.getenv('JWT_ACCESS_TOKEN_EXPIRES'))
