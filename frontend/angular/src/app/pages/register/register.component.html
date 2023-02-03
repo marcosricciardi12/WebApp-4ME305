@@ -18,12 +18,12 @@
                                 <div class="mb-3"><input class="form-control" type="user" name="user" formControlName="user" placeholder="User"></div>
                                 <div class="mb-3"><input class="form-control" type="user" name="email" formControlName="email" placeholder="Email"></div>
                                 <div *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)">
-                                    <p style="color: red;">Please provide a valid email address.</p> 
+                                    <p style="color: red;">Please provide a valid email address.</p>
                                   </div>
                                 <div class="mb-3"><input class="form-control" type="password" name="password" formControlName="password" placeholder="Password"></div>
                                 <div class="mb-3"><input class="form-control" type="password" name="password2" formControlName="password2" placeholder=" Repeat Password"></div>
                                 <div *ngIf="registerForm.get('password')?.value != registerForm.get('password2')?.value">
-                                    <p style="color: red">Las contraseñas no coinciden</p>
+                                    <p style="color: red">Passwords don't match!</p>
                                 </div>
                                 <div *ngIf="!registerForm.valid">
                                     <div class="mb-3"><button class="btn btn-primary d-block w-100 disabled" type="buttom">Register</button></div>

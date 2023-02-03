@@ -3,7 +3,7 @@
         <div class="fijar_navbar">
             <app-navbar></app-navbar>
         </div>
-        <div class="row justify-content-center">
+        <div  class="row justify-content-center">
             <div class="col-sm-2"></div>
             <div class="col d-flex justify-content-center">
                 <div class="card text-center mt-5" style="min-width: fit-content; width: 20rem;">
@@ -11,13 +11,22 @@
                       Welcome to WebApp
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">Choose your option!</h5>
+                      <h5 *ngIf="!isToken" class="card-title">Choose your option!</h5>
                       <p class="card-text"></p>
-                      <div class="row">
+                      <div *ngIf="!isToken" class="row">
                         <div class="p-2 col-6"><button type="button" class="btn btn-secondary btn-block" routerLink="/login"> Login </button></div>
                         <div class="p-2 col-6"><button type="button" class="btn btn-secondary btn-block" routerLink="/register">Register</button></div>
                       </div>
-                      
+                      <div *ngIf="isToken" class="row">
+                        <form (ngSubmit)="uploadImage()">
+                          <input type="file" (change)="onFileSelected($event)">
+                          <button type="submit">Upload Image</button>
+                        </form>
+                        <button class="btn btn-dark">
+                          <img src="assets/img/twitterlogo.png" width=60 />
+                          Upload image to twitter!
+                      </button>
+                      </div>
                       
                     </div>
                     <div class="card-footer text-muted">

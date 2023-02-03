@@ -11,6 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersService } from './services/users/users.service';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { UploadService } from './services/upload/upload.service';
+import { AuthService } from './services/auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  providers: [UsersService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [UsersService, UploadService, AuthService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
