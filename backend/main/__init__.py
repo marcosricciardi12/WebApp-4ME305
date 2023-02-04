@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import JWTManager
+from flask_cors import CORS, cross_origin
 
 api = Api()
 db = SQLAlchemy()
@@ -11,6 +12,7 @@ jwt = JWTManager()
 
 def create_app():
 	app = Flask(__name__)
+	CORS(app)
 	load_dotenv()
 	app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 	MYSQL_ROUTE = ('mysql+pymysql://' + str(os.getenv('DATABASE_USERNAME')) + ':' + str(os.getenv('DATABASE_PASSWORD')) + 
