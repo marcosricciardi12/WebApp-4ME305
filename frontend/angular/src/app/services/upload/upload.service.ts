@@ -1,12 +1,12 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, take } from 'rxjs';
-
+import  { environment } from './../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class UploadService {
-  url = 'users'
+  url = 'upload'
 
   constructor(private httpClient: HttpClient) { }
 
@@ -16,7 +16,7 @@ export class UploadService {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${auth_token}`
     });
-    this.httpClient.post('upload', dataFile, {headers: headers}).subscribe(response => {
+    this.httpClient.post((environment.url)+this.url, dataFile, {headers: headers}).subscribe(response => {
     console.log(response);
   });
   }

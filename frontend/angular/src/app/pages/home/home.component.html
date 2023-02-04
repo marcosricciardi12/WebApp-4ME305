@@ -19,13 +19,28 @@
                       </div>
                       <div *ngIf="isToken" class="row">
                         <form (ngSubmit)="uploadImage()">
-                          <input type="file" (change)="onFileSelected($event)">
-                          <button type="submit">Upload Image</button>
+                          <label class="label">
+                            <input type="file" (change)="onFileSelected($event)">
+                            <span>Select a file</span>
+                          </label>
+                          
+                          <div *ngIf="!selectedFile">
+                            <button class="btn btn-dark disabled" type="submit">
+                              <img src="assets/img/twitterlogo.png" width=60 />
+                              Upload image to twitter!
+                          </button>
+                          </div>
+                          
+                          <div *ngIf="selectedFile">
+                            <h5>{{selectedFile.name}}</h5>
+                            <button class="btn btn-dark" type="submit">
+                              <img src="assets/img/twitterlogo.png" width=60 />
+                              Upload image to twitter!
+                          </button>
+                          </div>
+                          
                         </form>
-                        <button class="btn btn-dark">
-                          <img src="assets/img/twitterlogo.png" width=60 />
-                          Upload image to twitter!
-                      </button>
+                        
                       </div>
                       
                     </div>

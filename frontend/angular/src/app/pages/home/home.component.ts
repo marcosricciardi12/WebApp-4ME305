@@ -10,7 +10,6 @@ import { UploadService } from 'src/app/services/upload/upload.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  imageForm!: FormGroup;
   selectedFile!: File;
 
   constructor(
@@ -27,9 +26,6 @@ export class HomeComponent implements OnInit {
         localStorage.removeItem('token');
       }
     }
-    this.imageForm = this.formBuilder.group({
-      file: ['', Validators.required],
-   });
   }
 
   get isToken() {

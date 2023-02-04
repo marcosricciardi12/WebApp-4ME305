@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable, take } from 'rxjs';
 import Swal from 'sweetalert2';
-
+import  { environment } from './../../../environments/environment';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
@@ -25,7 +25,7 @@ export class AuthService {
   login(dataLogin:any): Observable<any> {
     //dataLogin = {email: 'email@gmail.com',password: '123456'};
     return this.httpClient
-      .post(this.url , dataLogin, httpOptions)
+      .post((environment.url)+this.url , dataLogin, httpOptions)
       .pipe(take(1));
   }
 
