@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, redirect
+from flask import Flask, request, redirect, jsonify
 from dotenv import load_dotenv
 from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
@@ -32,6 +32,8 @@ def create_app():
 	
 	from main.auth import routes
 	app.register_blueprint(routes.auth)
+	from main.api_tw import routes
+	app.register_blueprint(routes.tw)
 	#Inicializar en app
 
 
