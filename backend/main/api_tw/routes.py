@@ -21,7 +21,7 @@ apitw = tweepy.API(authO)
 
 oauth2_user_handler = tweepy.OAuth2UserHandler(
     client_id=os.getenv("CLIENT_ID"),
-    redirect_uri= "http://127.0.0.1:5000/tw/success",
+    redirect_uri= "http://190.15.198.27:5000/tw/success",
     scope=["tweet.read", "tweet.write", "users.read", "offline.access"],
     # Client Secret is only necessary if using a confidential client
     client_secret="L_BUjZhgr75oFwPuqn6yEIkDshu-dms0jFNs7NrinJcQkWgJAM"
