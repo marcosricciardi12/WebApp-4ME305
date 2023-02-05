@@ -6,7 +6,8 @@ import  { environment } from './../../../environments/environment';
   providedIn: 'root'
 })
 export class UploadService {
-  url = 'upload'
+  url = 'tw/upload'
+  upload_response:any = {message: "", url: ""};
 
   constructor(private httpClient: HttpClient) { }
 
@@ -16,8 +17,7 @@ export class UploadService {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${auth_token}`
     });
-    this.httpClient.post((environment.url)+this.url, dataFile, {headers: headers}).subscribe(response => {
-    console.log(response);
-  });
+    return  this.httpClient.post((environment.url)+this.url, dataFile, {headers: headers}).pipe(take(1));
   }
+
 }
