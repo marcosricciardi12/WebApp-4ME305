@@ -1,5 +1,6 @@
 import tweepy
 from flask import request, jsonify, Blueprint, redirect
+from flask_jwt_extended import jwt_required
 import os
 
 twitter_auth_keys = {
@@ -29,6 +30,7 @@ oauth2_user_handler = tweepy.OAuth2UserHandler(
 
 tw = Blueprint('tw', __name__, url_prefix='/tw')
 
+@jwt_required()
 @tw.route("/upload", methods=["POST"])
 def upload():
     file = request.files['image']
