@@ -6,3 +6,4 @@ flask-jwt-extended
 flask-restplus
 flask-cors
 tweepy
+pymsql
