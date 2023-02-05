@@ -30,8 +30,9 @@ oauth2_user_handler = tweepy.OAuth2UserHandler(
 
 tw = Blueprint('tw', __name__, url_prefix='/tw')
 
-@jwt_required()
+
 @tw.route("/upload", methods=["POST"])
+@jwt_required()
 def upload():
     file = request.files['image']
     file.save(os.getenv("UPLOAD_FOLDER") + file.filename)
