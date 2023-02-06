@@ -4,7 +4,7 @@ cd backend
 cd ..
 cd frontend/angular
 npm install
-ng build --configuration=productio
+ng build --configuration=production
 docker run -d -p 8080:80 -v $PWD/dist/client:/usr/share/nginx/html nginx:alpine
 cd ..
 cd ..
